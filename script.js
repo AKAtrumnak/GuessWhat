@@ -1,7 +1,8 @@
 'use strict';
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 
-let score = 5;
+const initialScore = 5;
+let score = initialScore;
 let highscore = 0;
 
 // Hàm hiển thị thông báo
@@ -58,7 +59,7 @@ document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 100) + 1;
 
   // Đặt lại điểm số
-  score = 5;
+  score = initialScore;
 
   // Cập nhật giao diện
   displayMessage('Start guessing...');
