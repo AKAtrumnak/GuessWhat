@@ -1,7 +1,7 @@
 'use strict';
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 
-let score = 20;
+let score = 5;
 let highscore = 0;
 
 // Hàm hiển thị thông báo
