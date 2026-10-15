@@ -58,7 +58,7 @@ document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 100) + 1;
 
   // Đặt lại điểm số
-  score = 20;
+  score = 5;
 
   // Cập nhật giao diện
   displayMessage('Start guessing...');
