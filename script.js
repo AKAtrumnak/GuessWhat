@@ -13,6 +13,8 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     displayMessage('⛔ No number!');
+  } else if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
+    displayMessage('⛔ Please enter a whole number from 1 to 100!');
   } else if (guess === secretNumber) {
     displayMessage('🎉 Correct Number!');
 
