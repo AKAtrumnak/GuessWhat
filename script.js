@@ -3,6 +3,7 @@ let secretNumber = Math.trunc(Math.random() * 100) + 1;
 
 let score = 10;
 let highscore = 0;
+let lastGuess = null;
 
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
@@ -13,6 +14,9 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     displayMessage('⛔ No number!');
+  } else if (guess === lastGuess) {
+    displayMessage('⚠️ You already checked this number!');
+    return;
   } else if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
     displayMessage('⛔ Please enter a whole number from 1 to 100!');
   } else if (guess === secretNumber) {
@@ -40,14 +44,14 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+  lastGuess = guess;
 });
 
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 100) + 1;
 
   score = 10;
-
-  // Cập nhật giao diện
+  lastGuess = null;
   displayMessage('Start guessing...');
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
